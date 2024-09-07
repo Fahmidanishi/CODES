@@ -4,38 +4,58 @@
 #include<iostream>
 using namespace std;
 
-   float m;
-   float x,y;
-   float x1,x0,y1,y0;
+//int m;
+int x,y;
+//int x1,x0,y1,y0;
 
-
+int ax,ay,bx,by;
 void display(void)
 {
-   m=(y0-y1)/(x0-x1);
+   /* int ax = x0;
+    int ay = y0;
+    int bx = x1;
+    int by = y1;*/
+    //int dx = x1-x0;
+    int dx = bx -ax;
+    //int dy = y1-y0;
+    int dy = by-ay;
+    int di = 2*dy-dx;
 
-   if(abs(m)<= 1){
-
-    for(float x =x0; x<x1; x++){
-
-        y=y+m;
-
-        glBegin(GL_POINTS);
-        glVertex2f(x,y);
-        glEnd();
-     }
-   }
-    else if(abs(m)>1){
-
-        for(float y=y0; y<y1; y++){
-
-            x=x+(1/m);
-
+    x = ax;
+    y = ay;
+    glBegin(GL_POINTS);
+    glVertex2f(ax,ay);
+    glEnd();
+    //glFlush();
+    //x = ax;
+   // y = ay;
+    //for( ax= 0; ax<dx; ax++)
+    for(int i = 0; i<dx; i++)
+    {
+        if(di<0)
+        {
+            x = x+1;
+           // y = y;
             glBegin(GL_POINTS);
             glVertex2f(x,y);
             glEnd();
+            //glFlush();
+            di = di+(2*dy);
+        }
+        else if(di > 0)
+        {
+            x = x+1;
+            y = y+1;
+            glBegin(GL_POINTS);
+            glVertex2f(x,y);
+            glEnd();
+            //glFlush();
+            di+=((2*dy)-(2*dx));
+
         }
     }
     glFlush();
+
 }
 
 void init(void)
@@ -49,8 +69,9 @@ void init(void)
 
 int main(int argc, char** argv)
 {
-   cout<<"Enter the value of the points";
-   cin>>x0>>y0>>x1>>y1;
+    cout<<"Enter the value of the points";
+    // scanf("%f %f %f %f", &x0,&y0,&x1,&y1);
+    cin>>ax>>ay>>bx>>by;
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize(500,500);
@@ -59,6 +80,8 @@ int main(int argc, char** argv)
     init();
     glutDisplayFunc(display);
     glutMainLoop();
+    //display();
 
-return 0;
+    return 0;
 }
+
