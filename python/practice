@@ -1,0 +1,244 @@
+#greatest of 3 number
+"""a= int(input("Enter first number = "))
+b= int(input("Enter second number = "))
+c = int(input("Enter third number = "))
+
+if a > b and a > c:
+  print(a,"is greater")
+elif b > a and b > c:
+    print(b,"is greater")
+else:
+    print(c, "is greater")
+
+#check if the first input is vowel or not
+s = str(input("Enter a number: "))
+if s[0] in ['a','e','i','o','u','A','E','I','O','U']:
+    print(s,"is vowel")
+else:
+    print(s,"is not vowel")
+
+#radious of  a circle
+r = int(input("Enter a number: "))
+area = float(3.1416*r*r)
+print("Area of the circle is = ",area)
+
+#celcious and fahrenhait
+c = int(input("Enter in celsius: "))
+f = (c * 9/5) + 32
+print("Temparature in fahrenhait is : ",f)
+f = int(input("Enter in fahrenhait: "))
+c = (f - 32) * 5/9
+print("Temparature in celsius is : ",c)
+
+#take input of age of 3 people by user and determine the oldest and youngest
+
+a = int(input("Enter the age of 1st person: "))
+b = int(input("Enter the age of 2nd person: "))
+c = int(input("Enter the age of 3rd person: "))
+
+if a > b and a > c:
+    print(a,"is oldest")
+elif b > a and b > c:
+    print(b,"is oldest")
+else:
+    print(c,"is oldest")
+if a < b and a < c:
+    print(a,"is youngest")
+elif b < a and b < c:
+    print(b,"is youngest")
+else:
+    print(c,"is youngest")
+
+#print reverse from 9 to 0 using for loop
+
+for i in reversed(range(0,10)):
+    print(i)
+
+# x=5 hole  x 1 1 kore decrement hobe ogular summation
+x = int(input("Enter a number: "))
+sum = 0
+for i in range(1,x+1):
+    sum = sum + i
+print(sum)
+
+#triangle with star
+for i in range(0,5,1):
+    print("* "*i)
+
+#or
+for i in range(5):
+    print("* "*i)
+
+#print 5 multiplication table
+for i in range(1,11):
+    print("5 *",i,"=",5*i)
+
+#factorial
+n = int(input())
+if n < 0:
+    print("Invalid")
+elif n == 1 or n == 0:
+    print("1")
+else:
+    fact = 1
+    for i in range(1,n+1):
+        fact = fact*i
+    print(fact)
+#list concatenation
+color_list1 = ["Red","Pink","Violet"]
+color_list2 = ["white","blue","black"]
+color_list = color_list1 + color_list2
+print(color_list)
+
+#add
+color_list.append("yellow")
+print(color_list)
+
+color_list.insert(2,"green")
+print(color_list)
+
+#replace
+color_list[1] = "brown"
+print(color_list)
+
+#remove
+color_list.remove(color_list[3])
+print(color_list)
+
+color_list[1] = "brown"
+print(color_list)
+
+#list user input
+list=[]
+n=int(input("Enter number of elements:"))
+for i in range(0,n):
+    element=input()
+    list.append(element)
+print(list)
+# output Enter number of elements:3
+# greeks 3
+# for 2
+# greeks 1
+# ['greeks 3', 'for 2', 'greeks 1']
+
+
+#that computes the greatest common divisor(GCD) of two positive integer
+import math
+print("The gcd of 60 and 48 is: ", end = "")
+print(math.gcd(60,48))
+#output The gcd of 60 and 48 is: 12 """
+
+#even or odd
+"""a = int (input("Enter a number = "))
+
+if a % 2 == 0:
+    print(a,"is even")
+else:
+    print(a,"is odd") 
+    
+#print even odd from a list
+numbers = [4,11,8,15,22,7,3,12]
+even_numbers = []
+odd_numbers = []
+
+for num in numbers:
+    if num % 2 == 0:
+        even_numbers.append(num)
+    else:
+        odd_numbers.append(num)
+print("Even numbers:",even_numbers)
+print("Odd numbers:",odd_numbers) 
+
+#count the item of the list
+list = ["Apple", "Banana","Pear"]
+
+char_count_dic = {}
+
+for word in list:
+    for char in word:
+        if char in char_count_dic:
+            char_count_dic[char] += 1
+        else:
+            char_count_dic[char] = 1
+print(char_count_dic) 
+
+#take a list and there will be positive and negative value and replace the negative value with 0
+numbers = [4,-11,8,-15,22,-7,3,-12]
+
+for i in range(len(numbers)):
+    if numbers[i] < 0:
+        numbers[i] = 0
+print("Updated list:",numbers) 
+
+# take a list and there will be different length of strings and will print them with same string length
+items = ["Apple","Banana","Mango","Pear","kiwi"]
+length_dic = {}
+for item in items:
+    length = len(item) #find the length of the word
+    if length not in length_dic:
+        length_dic[length] = [item]
+    else:
+        length_dic[length].append(item) #add to the existing group
+print(length_dic) 
+
+#given a list and divide them with 7 and count the division
+list = [7,12,49,70,3,5]
+count = 0
+
+for i in range(len(list)):
+    if list[i] % 7 == 0:
+        count += 1
+print("Total count: ",count) 
+
+#to find the item with maximum occurance in a given list
+list = [1,1,1,2,2,2,2,3,3,3]
+count = [0] * 10000
+
+for i in list:
+    count[i] += 1
+mx = max(count)
+index = count.index(mx)
+print(index)
+
+#maximum occurance in a given list
+color_list = ['red','pink','green','red']
+color_counts = {}
+
+for color in color_list:
+    if color in color_counts:
+        color_counts[color] += 1
+    else:
+        color_counts[color] = 1
+max_frequency_color = max(color_counts,key = color_counts.get)
+print(max_frequency_color) 
+
+#dictionary
+person = {
+    'name' : 'Nishi' ,
+    'age' : '24',
+    'job' : 'developer',
+}
+print(person)
+person['height'] = 5.1
+print(person) 
+
+#max frequency
+color_list = ["red","blue","green","red"]
+color_counts = {}
+for color in color_list:
+    if color in color_counts:
+        color_counts[color] += 1
+    else:
+        color_counts[color] = 1
+max_frequency_color = max(color_counts, key=color_counts.get)
+print(max_frequency_color)
+
+#to find the item with maximum occurance in a given list
+a = [1,1,1,2,2,2,2,3,3,3]
+count = [0] * 10000
+
+for i in a:
+  count[i] += 1
+mx = max(count)
+index = count.index(mx)
+print(index) """
