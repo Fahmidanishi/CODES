@@ -1,0 +1,12 @@
+Overfitting vs Underfitting
+Overfitting and underfitting are two common problems in machine learning model training.
+1. Underfitting:
+- The model is too simple and cannot capture the data patterns.
+- It results in high bias and poor performance on both training and test data.
+- Example: A straight-line model trying to fit complex data.
+2. Overfitting:
+- The model is too complex and memorizes the training data instead of learning patterns.
+- It results in high variance and poor performance on new/unseen data.
+- Example: A model fitting every noise and fluctuation in data.
+3. Good Fit:
+- The model captures the underlying trend well without being too complex or too simple.
